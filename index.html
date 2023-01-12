@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/tic-tac-toe-icon.png">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Tic Tac Toe</title>
+    <script type="module" src="index.js" defer></script>
+</head>
+<body>
+    <div class="container">
+
+        <div class="front-page" id="front-page">
+
+            <img src="./images/tic-tac-toe-frontPage.png" alt="Tic-Tac-Toe" class="main-image">
+
+            <div class="players">
+
+                <div class="player">
+                    <div>
+                        <label for="name1" class="name-label">Player 1 Name: </label>
+                        <input type="text" name="name1" id="name1" class="name">
+                    </div>
+                    <div>
+                        <label for="avatar1">Avatar: </label>
+                        <div class="all-icons" name="avatar1" id="avatar1">
+                            <img src="./images/icons/cross.png" alt="cross">
+                            <img src="./images/icons/circle.png" alt="circle">
+                            <img src="./images/icons/flower.png" alt="flower">
+                            <img src="./images/icons/heart-bio.png" alt="heart-bio">
+                            <img src="./images/icons/heart.png" alt="heart">
+                            <img src="./images/icons/rose.png" alt="rose">
+                            <img src="./images/icons/rupee-symbol.png" alt="rupee-symbol">
+                        </div>
+                    </div>
+                    <!-- <div>
+                        <label for="avatar1">Avatar</label>
+                        <select name="avatar1" id="avatar1" class="avatar">
+                            <option value="icon1">Icon 1</option>
+                            <option value="icon2">Icon 2</option>
+                            <option value="icon3">Icon 3</option>
+                        </select>
+                    </div> -->
+                </div>
+
+                <div class="player">
+                    <div>
+                        <label for="name2" class="name-label">Player 2 Name: </label>
+                        <input type="text" name="name2" id="name2" class="name">
+                    </div>
+                    <div>
+                        <label for="avatar2">Avatar: </label>
+                        <div class="all-icons" name="avatar2" id="avatar2">
+                            <img src="./images/icons/cross.png" alt="cross">
+                            <img src="./images/icons/circle.png" alt="circle">
+                            <img src="./images/icons/flower.png" alt="flower">
+                            <img src="./images/icons/heart-bio.png" alt="heart-bio">
+                            <img src="./images/icons/heart.png" alt="heart">
+                            <img src="./images/icons/rose.png" alt="rose">
+                            <img src="./images/icons/rupee-symbol.png" alt="rupee-symbol">
+                        </div>
+                    </div>
+                    <!-- <div>
+                        <label for="avatar2">Avatar</label>
+                        <select name="avatar1" id="avatar1" class="avatar">
+                            <option value="icon1">Icon 1</option>
+                            <option value="icon2">Icon 2</option>
+                            <option value="icon3">Icon 3</option>
+                        </select> 
+                    </div> -->
+                </div>
+
+            </div>
+
+            <div class="next-btn" id="next-btn">NEXT</div>
+
+        </div>
+
+        <div class="game-page" id="game-page">
+
+            <div class="layout">
+                <div class="boxes" id="0"></div>
+                <div class="boxes" id="1"></div>
+                <div class="boxes" id="2"></div>
+                <div class="boxes" id="3"></div>
+                <div class="boxes" id="4"></div>
+                <div class="boxes" id="5"></div>
+                <div class="boxes" id="6"></div>
+                <div class="boxes" id="7"></div>
+                <div class="boxes" id="8"></div>
+            </div>
+
+            <div class="game-players">
+                <div class="game-player">
+                    <div class="active" id="active1"></div>
+                    <div class="gp-name" id="gp-name1">Player 1</div>
+                    <img src="./images/icons/cross.png" alt="Player 1 icon" class="icons" id="p1-img">
+                </div>
+
+                <div class="game-player">
+                    <div class="active" id="active2"></div>
+                    <div class="gp-name" id="gp-name2">Player 2</div>
+                    <img src="./images/icons/circle.png" alt="Player 2 icon" class="icons" id="p2-img">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="darken" id="darken">Click anywhere on the dark or press Esc to close window.</div>
+        <div class="win-declare" id="win-declare">
+            <div class="win-bg"></div>
+            <div class="winner-name" id="winner-name">Player Wins!</div>
+            <img src="./images/tic-tac-toe-icon.png" alt="Winner Icon" class="winner-icon" id="winner-icon">
+        </div>
+
+    </div>
+</body>
+</html>
