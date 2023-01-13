@@ -29,31 +29,58 @@ const listofIcons = [
   "rupee-symbol.png",
 ];
 
-const displayIcons = (from = "", remove = "") => {
+// function rm(avChildren) {
+//   for (const ic of avChildren) {
+//     ic.classList.remove("selectedIcon");
+//     if (ic.style.display === "none") {
+//       ic.style.display = "";
+//     }
+//   }
+// }
+
+function removeIcon(avChildren, av) {
+  for (const icon of avChildren) {
+    icon.addEventListener("click", () => {
+      for (let i = 0; i < av.length; i++) {
+        if (icon.alt === av[i].alt) av[i].style.display = "none";
+        else av[i].style.display = "";
+      }
+      // rm(avChildren);
+      // icon.style.display = "none";
+      for (const ic of avChildren) ic.classList.remove("selectedIcon");
+      icon.classList.add("selectedIcon");
+
+      if (icon.id === "1") p1ImgPath = icon.getAttribute("src");
+      else p2ImgPath = icon.getAttribute("src");
+
+      // console.log(icon.getAttribute("src"));
+    });
+  }
+}
+
+function dI() {
+  let listofIconsCopy = listofIcons;
   const av1 = document.querySelector("#avatar1");
   const av2 = document.querySelector("#avatar2");
 
-  if (from === "1") {
-    for (const icon of listofIcons) {
-      if (remove === icon) continue;
-      const dispIcon = `<img src="./images/icons/${icon}" alt="${icon}">`;
-      av1.insertAdjacentHTML("beforeend", dispIcon);
-    }
+  for (const icon of listofIconsCopy) {
+    // if (remove === icon) {
+    //   p1ImgPath = `<img src="./images/icons/${icon}" alt="${icon}">`;
+    //   continue;
+    // }
+    const dispIcon = `<img src="./images/icons/${icon}" alt="${icon}" id="1">`;
+    const dispIcon2 = `<img src="./images/icons/${icon}" alt="${icon}" id="2">`;
+    av1.insertAdjacentHTML("beforeend", dispIcon);
+    av2.insertAdjacentHTML("beforeend", dispIcon2);
   }
+  const av1Children = av1.children;
+  const av2Children = av2.children;
 
-  if (from === "2") {
-    for (const icon of listofIcons) {
-      if (remove === icon) continue;
-      const dispIcon = `<img src="./images/icons/${icon}" alt="${icon}">`;
-      av2.insertAdjacentHTML("beforeend", dispIcon);
-    }
-    // listofIcons.forEach((icon) => {
-    //     if(remove === icon) continue;
-    //     const dispIcon = `<img src="./images/icons/${icon}" alt="${icon}">`;
-    //     av2.insertAdjacentHTML("beforeend", dispIcon);
-    //   });
-  }
-};
+  removeIcon(av1Children, av2Children);
+  removeIcon(av2Children, av1Children);
+}
+
+dI();
 
 const winCases = [
   [0, 1, 2],
@@ -175,6 +202,9 @@ nextBtn.addEventListener("click", () => {
 
   player1 = p1.value === "" ? player1 : p1.value;
   player2 = p2.value === "" ? player2 : p2.value;
+
+  p1Img.src = p1ImgPath;
+  p2Img.src = p2ImgPath;
 
   gp1.innerHTML = player1;
   gp2.innerHTML = player2;

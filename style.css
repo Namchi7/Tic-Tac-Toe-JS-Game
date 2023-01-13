@@ -87,14 +87,22 @@ input {
 }
 
 .all-icons > * {
-    width: 35%;
+    width: 50%;
     /* width: 30px; */
+    padding: 5px;
     margin: auto;
 }
 
 .all-icons > *:hover {
     cursor: pointer;
     filter: drop-shadow(0 0 50px lime);
+}
+
+.selectedIcon {
+    border: 1.5px solid greenyellow;
+    border-radius: 5px;
+    background-color: rgba(0, 255, 255, 0.2);
+    padding: 7px;
 }
 
 .next-btn {
